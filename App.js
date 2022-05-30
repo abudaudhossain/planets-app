@@ -9,6 +9,16 @@ import { typography } from './src/theme/typography';
 
 
 export default function App() {
+  const [loaded] = useFonts({
+    'Antonio-Medium' : require('./assets/fonts/Antonio-Medium.ttf'),
+    'Spartan-Regular' : require('./assets/fonts/LeagueSpartan-Regular.ttf'),
+    'Spartan-Bold' : require('./assets/fonts/LeagueSpartan-Bold.ttf'),
+    
+  })
+
+  if(!loaded){
+    return null;
+  }
   return (
     <View style={styles.container}>
       <Text preset='h1'>Open up App.js to start working on your app!</Text>

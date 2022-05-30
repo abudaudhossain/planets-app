@@ -1,5 +1,5 @@
 export const typography = {
-    primary : "LeagueSpartanRegular",
-    primaryBold: "LeagueSpartanBold",
-    bold: "Antonio"
+    primary : "Spartan-Regular",
+    primaryBold: "Spartan-Bold",
+    bold: "Antonio-Medium"
 }
