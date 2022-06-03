@@ -1,6 +1,6 @@
 
-import { colors } from "../theme/colors";
-import { typography } from "../theme/typography";
+import { colors } from "../../theme/colors";
+import { typography } from "../../theme/typography";
 
 const BASE = {
     fontFamily: typography.primary,
