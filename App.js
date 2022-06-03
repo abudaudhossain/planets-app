@@ -1,29 +1,35 @@
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView, ScrollView } from 'react-native';
 import { Image } from 'react-native';
 import Text from './src/components/text';
+import home from './src/screens/home';
 import { spacing } from './src/theme/spacing';
 import { typography } from './src/theme/typography';
 
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   const [loaded] = useFonts({
-    'Antonio-Medium' : require('./assets/fonts/Antonio-Medium.ttf'),
-    'Spartan-Regular' : require('./assets/fonts/LeagueSpartan-Regular.ttf'),
-    'Spartan-Bold' : require('./assets/fonts/LeagueSpartan-Bold.ttf'),
-    
+    'Antonio-Medium': require('./assets/fonts/Antonio-Medium.ttf'),
+    'Spartan-Regular': require('./assets/fonts/LeagueSpartan-Regular.ttf'),
+    'Spartan-Bold': require('./assets/fonts/LeagueSpartan-Bold.ttf'),
+
   })
 
-  if(!loaded){
+  if (!loaded) {
     return null;
   }
   return (
-    <View style={styles.container}>
-      <Text preset='h1'>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer theme={DarkTheme}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={home} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
